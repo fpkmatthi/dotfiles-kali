@@ -45,3 +45,11 @@ config checkout
 config config --local status.showUntrackedFiles no
 ```
 
+## Manual config
+
+Notes to self:
+
+- Disable xfwm4 in session and verify bspm/sxhkd autostart
+- Remove default xfce4 keyboard shortcuts
+- Rename workspaces to `&, é, ", ', (`
+- Match the amount of workspaces with those in the bspwm config
