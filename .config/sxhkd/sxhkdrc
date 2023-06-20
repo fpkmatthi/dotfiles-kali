@@ -1,0 +1,75 @@
+# NOTE: Number keys on AZERTY keyboard are marked as
+# {ampersand, eacute, quotedbl, apostrophe, parenleft, section, egrave, exclam, ccedilla, agrave}
+
+# Programs {{{
+super + Return
+    alacritty
+
+super + d
+    xfce4-popup-whiskermenu
+
+super + x
+    xfce4-session-logout
+# }}}
+
+# Menus, volume, brightness {{{
+# screenshot
+super + shift + p
+    /usr/bin/flameshot gui -d 700
+# }}}
+
+# Bspwm hotkeys {{{
+# quit/restart bspwm
+super + shift + {e,r}
+    bspc {quit,wm -r}
+
+# force quit
+super + shift + q
+    bspc node -k
+
+# close normally
+alt + F4
+    bspc node -c
+
+# make sxhkd reload its configuration files:
+super + Escape
+    pkill -USR1 -x sxhkd
+# }}}
+
+# Node state/flags {{{
+# set the window state
+super + {t,shift + t,s,f}
+    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+# }}}
+
+# Focus/swap {{{
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+    bspc node -{f,s} {west,south,north,east}
+
+# focus the last node/desktop
+super + Tab
+    bspc desktop -f last
+
+# focus or send to the given desktop
+super + {_,shift + }{ampersand, eacute, quotedbl, apostrophe, parenleft, section, egrave, exclam, ccedilla, agrave}
+    bspc {desktop -f,node -d} '^{1-9,10}'
+
+# rotate nodes
+super + {v, shift + v}
+    bspc node @/ -R {90,270}
+# }}}
+
+# Preselect {{{
+# preselect the direction
+# }}}
+
+# Move/resize {{{
+# expand window
+super + shift + ctrl + {u,i,o,p}
+    bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract window
+super + {u,i,o,p}
+    bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+# }}}
